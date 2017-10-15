@@ -71,7 +71,7 @@ int main()
 	printf("Ers\x84ttningsresistans:\n %.1f ohm\n", resistance);
 	printf("Effekt:\n %.2f W\n", power);
 	printf("Ers\x84ttningsresistanser i E12-serien kopplade i serie:\n");
-	print_replacement_resistors(pointer_replacement_resistors, number_components);
+	print_replacement_resistors(pointer_replacement_resistors, number_replacement_resistors);
 
 	free(pointer_replacement_resistors);
 
