@@ -9,6 +9,7 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "libresistance.h"
 
 int read_multiple_integers(void);
@@ -61,7 +62,7 @@ int read_multiple_integers(void) {
 	int input_value = 0;
 	do {
 		printf("Antal komponenter: ");
-		scanf_s("%d", &input_value);
+		scanf("%d", &input_value);
 	} while (input_value <= 0);
 
 	return input_value;
@@ -99,7 +100,7 @@ float read_float(void)
 	float retval = 0.0;
 	char ch = '\0';
 
-	scanf_s("%f", &retval);
+	scanf("%f", &retval);
 	while ((ch = getchar()) != EOF && ch != '\n');
 
 	return retval;

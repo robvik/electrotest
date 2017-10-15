@@ -28,6 +28,10 @@ testpower:	src/test_libpower.c libpower
 	ar rcs libpower.a libpower.o
 	$(CC) -static src/test_libpower.c -o testpower -L. -lpower
 
+testresistance:	src/test_libresistance.c libresistance
+	ar rcs libresistance.a libresistance.o
+	$(CC) -static src/test_libresistance.c -o testresistance -L. -lresistance
+	
 clean:
 	rm -f *.a *.so *.o electrotest testpower
 
