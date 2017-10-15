@@ -30,13 +30,6 @@ int e_resistance(float orig_resistance, float *res_array)
 
         if(orig_resistance-e12Series[i]>=0)
         {
-            //Om är på tredje resistorn kollar om det är närmare korrekt värde
-            //över eller under noll
-            if(count == 2)
-            {
-               if(orig_resistance-e12Series[i]>e12Series[i+1]-orig_resistance)
-                   i++;
-            }
             orig_resistance = orig_resistance-e12Series[i];
 
             //Sparar in resistansen i output arrayen
