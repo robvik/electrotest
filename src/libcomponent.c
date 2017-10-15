@@ -10,7 +10,6 @@ int e_resistance(float orig_resistance, float *res_array)
                         , 120, 150, 180, 220, 270, 330, 390, 470, 560, 680, 820, 1000\
                         , 1200, 1500, 1800, 2200, 2700, 3300, 3900, 4700, 5600, 6800, 8200, 10000};
     int count=0;
-    int runOK = 1;
     int i;
     do{
         for(i=36; orig_resistance-e12Series[i]<=0 && i>=0;i--);
