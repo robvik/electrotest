@@ -33,7 +33,7 @@ testresistance:	src/test_libresistance.c libresistance
 	$(CC) -static src/test_libresistance.c -o testresistance -L. -lresistance
 	
 clean:
-	rm -f *.a *.so *.o electrotest testpower
+	rm -f *.a *.so *.o electrotest testpower testresistance
 
 install: lib electrotest
 	install electrotest /usr/local/bin/electrotest
