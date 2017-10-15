@@ -67,6 +67,8 @@ int main()
 	printf("Ers\x84ttningsresistanser i E12-serien kopplade i serie:\n");
 	print_replacement_resistors(pointer_replacement_resistors, number_components);
 
+	free(pointer_replacement_resistors);
+		
     return 0;
 }
 
