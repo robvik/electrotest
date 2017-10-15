@@ -69,7 +69,7 @@ int main()
 
 	//Skriv ut resultatet
 	printf("Ers\x84ttningsresistans:\n %.1f ohm\n", resistance);
-	printf("Effekt:\n %.2f W\n", floor(power*100.0)/100.0));
+	printf("Effekt:\n %.2f W\n", floor(power*100.0)/100.0);
 	printf("Ers\x84ttningsresistanser i E12-serien kopplade i serie:\n");
 	print_replacement_resistors(pointer_replacement_resistors, number_replacement_resistors);
 
