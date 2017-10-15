@@ -1,4 +1,5 @@
 #include <math.h>
+#include "libpower.h"
 
 float calc_power_r(float volt, float resistance)
 {

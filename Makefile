@@ -9,9 +9,9 @@ lib: libcomponent libpower libresistance
 
 electrotest:
 	ar rcs libcomponent.a libcomponent.o
-	ar rcs libpower.a libresistance.o
+	ar rcs libpower.a libpower.o
 	ar rcs libresistance.a libresistance.o
-	$(CC) -static src/main.c -o electrotest -L. -lcomponent -lpower -lresistance
+	$(CC) -static src/main.c -o electrotest -L. -lcomponent -lpower -lresistance -lm
 
 libcomponent:	src/libcomponent.c src/libcomponent.h
 	$(CC) -c -fPIC src/libcomponent.c
@@ -27,7 +27,7 @@ libresistance:	src/libresistance.c src/libresistance.h
 
 testpower:	src/test_libpower.c libpower
 	ar rcs libpower.a libpower.o
-	$(CC) -static src/test_libpower.c -o testpower -L. -lpower
+	$(CC) -static src/test_libpower.c -o testpower -L. -lpower -lm
 
 clean:
 	rm -f *.a *.so *.o electrotest testpower
