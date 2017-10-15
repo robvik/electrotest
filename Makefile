@@ -1,13 +1,13 @@
 CC = gcc
 
 all: lib electrotest
-	ar rcs libcomponent.a libcomponent.o
-	ar rcs libpower.a libresistance.o
-	ar rcs libresistance.a libresistance.o
 
 lib: libcomponent libpower libresistance
 
 electrotest:
+	ar rcs libcomponent.a libcomponent.o
+	ar rcs libpower.a libresistance.o
+	ar rcs libresistance.a libresistance.o
 	$(CC) -static src/main.c -o electrotest -L. -lcomponent -lpower -lresistance -lm
 
 libcomponent:	src/libcomponent.c src/libcomponent.h
