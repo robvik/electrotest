@@ -8,7 +8,7 @@ all: lib electrotest
 lib: libcomponent libpower libresistance
 
 electrotest:
-	$(CC) -o electrotest src/main.c -lcomponent -lpower -lresistance -lm
+	$(CC) -static src/main.c -o electrotest -L. -lcomponent -lpower -lresistance -lm
 
 libcomponent:	src/libcomponent.c src/libcomponent.h
 	$(CC) -c -fPIC src/libcomponent.c -lm

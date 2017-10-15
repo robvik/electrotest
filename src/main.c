@@ -4,7 +4,7 @@
 * Description: Huvudprogram som innehåller funktioner för inmatning av nödvändiga värden samt funktionsanropningar
 *			   till alla inkluderande bibliotek som krävs för att beräkna resistansen. Den här filen presentera även
 *			   resultatet för användaren.
-*			   
+*
 * Date: 2017-10-15
 * Version: 1.0
 */
@@ -53,9 +53,9 @@ int main()
 
 	//Beräkna den totala resistansen
 	resistance = calc_resistance(number_components, coupling_method, pointer_to_resistors);
-	if (resistance == -1) 
+	if (resistance == -1)
 		fprintf(stderr, "Invalid input.\n");
-	
+
 	//Beräkna effekten i watt
 	power = calc_power_r(volt, resistance);
 
@@ -87,7 +87,7 @@ float read_float(void)
 	float retval = 0.0;
 	char ch = '\0';
 
-	scanf_s("%f", &retval);
+	scanf("%f", &retval);
 	while ((ch = getchar()) != EOF && ch != '\n');
 
 	return retval;
@@ -100,9 +100,9 @@ float read_float(void)
 * Returnerar: Ett heltal (integer)
 */
 int read_integer(void) {
-	
+
 	int input_value;
-	scanf_s("%d", &input_value);
+	scanf("%d", &input_value);
 
 	return input_value;
 }
@@ -118,7 +118,7 @@ int read_multiple_integers(void) {
 	int input_value = 0;
 	do {
 		printf("Antal komponenter: ");
-		scanf_s("%d", &input_value);
+		scanf("%d", &input_value);
 	} while (input_value <= 0);
 
 	return input_value;
@@ -131,7 +131,7 @@ int read_multiple_integers(void) {
 * Returnerar: En karaktär (char)
 */
 char read_character(void)
-{	
+{
 	char line[256];
 	char ch;
 
