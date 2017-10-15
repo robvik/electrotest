@@ -11,6 +11,10 @@ lib: libpower libresistance
 
 #electrotest:
 
+libcomponent:	src/libcomponent.c src/libcomponent.h
+	$(CC) -c -fPIC src/libcomponent.c -lm
+	$(CC) -shared -o libcomponent.so libcomponent.o -lm
+
 libpower:	src/libpower.c src/libpower.h
 	$(CC) -c -fPIC src/libpower.c -lm
 	$(CC) -shared -o libpower.so libpower.o -lm
