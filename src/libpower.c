@@ -1,9 +1,8 @@
-#include <math.h>
 #include "libpower.h"
 
 float calc_power_r(float volt, float resistance)
 {
-  return powf(volt, 2.) / resistance;
+  return (volt * volt) / resistance;
 }
 
 float calc_power_i(float volt, float current)

@@ -27,7 +27,7 @@ int main()
 {
 	//Constant
 	const int MAX_AMOUNT_OF_RESISTORS = 3;
-	
+
 	//Variabler och pekare
 	int volt;
 	float power;
@@ -173,7 +173,7 @@ void print_replacement_resistors(float* values, int number_components)
 {
 	for (int i = 0; i < number_components; i++)
 		if (values[i] > 0)
-			printf("%.1f ", values[i]);
+			printf("%.0f \n", values[i]);
 
 	printf("\n");
 }
