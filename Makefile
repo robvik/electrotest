@@ -30,3 +30,15 @@ testpower:	src/test_libpower.c libpower
 
 clean:
 	rm -f *.a *.so *.o electrotest testpower
+
+install: lib electrotest
+	install electrotest /usr/local/bin/electrotest
+	install libcomponent.so /usr/lib
+	install libpower.so /usr/lib
+	install libresistance.so /usr/lib
+
+uninstall:
+	rm -f /usr/local/bin/electrotest
+	rm -f /usr/libcomponent.so
+	rm -f /usr/libpower.so
+	rm -f /usr/libresistance.so
