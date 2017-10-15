@@ -1,24 +1,28 @@
+/*
+* Filename: main.c
+* ----------------------------
+* Description: Huvudprogram som innehåller funktioner för inmatning av nödvändiga värden samt funktionsanropningar
+*			   till alla inkluderande bibliotek som krävs för att beräkna resistansen. Den här filen presentera även
+*			   resultatet för användaren.
+*			   
+* Date: 2017-10-15
+* Version: 1.0
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-#include "component.h"
-#include "resistance.h"
-#include "power.h"
+#include "libcomponent.h"
+#include "libresistance.h"
+#include "libpower.h"
+#include "main.h"
 
 /*
-	\x86 = å
-	\x84 = ä
-	\x94 = ö
+* Function: main
+* ----------------------------
+* Frågan användaren efter nödvändiga värden för att beräkna resistansen som slutligen visas för användaren.
 */
-
-static int read_integer();
-static int read_multiple_integers();
-static char read_character();
-static float read_float();
-static float* reserve_resistors(int number_resistors);
-static void print_replacement_resistors(float* values, int number_components);
-
 int main()
 {
 
@@ -68,10 +72,16 @@ int main()
 	print_replacement_resistors(pointer_replacement_resistors, number_components);
 
 	free(pointer_replacement_resistors);
-		
+
     return 0;
 }
 
+/*
+* Function: read_float
+* ----------------------------
+* Tillåter användaren att mata in ett flyttal som slutligen returneras.
+* Returnerar: Ett flyttal (float)
+*/
 float read_float(void)
 {
 	float retval = 0.0;
@@ -83,6 +93,12 @@ float read_float(void)
 	return retval;
 }
 
+/*
+* Function: read_integer
+* ----------------------------
+* Tillåter användaren att mata in ett heltal som slutligen returneras.
+* Returnerar: Ett heltal (integer)
+*/
 int read_integer(void) {
 	
 	int input_value;
@@ -91,8 +107,14 @@ int read_integer(void) {
 	return input_value;
 }
 
+/*
+* Function: read_integer
+* ----------------------------
+* Tillåter användaren att mata in flera heltal som slutligen returneras.
+* Returnerar: Ett heltal (integer)
+*/
 int read_multiple_integers(void) {
-	
+
 	int input_value = 0;
 	do {
 		printf("Antal komponenter: ");
@@ -102,6 +124,12 @@ int read_multiple_integers(void) {
 	return input_value;
 }
 
+/*
+* Function: read_character
+* ----------------------------
+* Tillåter användaren att mata in en karaktär som slutligen returneras.
+* Returnerar: En karaktär (char)
+*/
 char read_character(void)
 {	
 	char line[256];
@@ -117,6 +145,12 @@ char read_character(void)
 	return ch;
 }
 
+/*
+* Function: reserve_resistors
+* ----------------------------
+* Allokerar minne för flyttal samt ber användaren att mata in uppgifter om en komponent (dess ohm)
+* Returnerar: En pekare till minnet som hanterar datan om resistorerna
+*/
 float* reserve_resistors(int number_resistors) {
 
 	float* pointer_to_resistor = malloc(number_resistors * sizeof(float));
@@ -128,6 +162,11 @@ float* reserve_resistors(int number_resistors) {
 	return pointer_to_resistor;
 }
 
+/*
+* Function: print_replacement_resistors
+* ----------------------------
+* Skriver ut information om ersättningsresistorerna
+*/
 void print_replacement_resistors(float* values, int number_components)
 {
 	for (int i = 0; i < number_components; i++)
