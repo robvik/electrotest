@@ -40,7 +40,9 @@ int e_resistance(float orig_resistance, float *res_array)
         }
 
     }while(i>=0&&count<3);//Loppar medans antallet resistorer är mindre än 3 eller i inte gått ner till 0 
-    
+
+    //Kollar på sista valda resistorn om det blir närmare
+    //korrekt värde istället ta en med ett snäpp högre värde    
     orig_resistance = orig_resistance+e12Series[i_old];
     if(orig_resistance-e12Series[i_old] > e12Series[i_old+1]-orig_resistance) 
         *(--res_array)=e12Series[i_old+1];
