@@ -25,7 +25,9 @@
 */
 int main()
 {
-
+	//Constant
+	const int MAX_AMOUNT_OF_RESISTORS = 3;
+	
 	//Variabler och pekare
 	int volt;
 	float power;
@@ -60,7 +62,7 @@ int main()
 	power = calc_power_r(volt, resistance);
 
 	//Allokerar plats för resistorerna
-	float *pointer_replacement_resistors = malloc(number_components * sizeof(float));
+	float *pointer_replacement_resistors = malloc(MAX_AMOUNT_OF_RESISTORS * sizeof(float));
 
 	//Antalet ersättningsresistorer
 	number_replacement_resistors = e_resistance(resistance, pointer_replacement_resistors);
