@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "libpower.h"
 
-int main(void) {
+int main(void)
+{
   printf("Voltage = 100 V, Resistance = 500, Resulting power = %f\n", calc_power_r(100., 500.));
   printf("Should've be 20\n");
 
