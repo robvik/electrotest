@@ -27,4 +27,4 @@ testpower:	src/test_libpower.c libpower
 	$(CC) -static src/test_libpower.c -o testpower -L. -lpower -lm
 
 clean:
-	rm -f *.a *.so *.o testpower
+	rm -f *.a *.so *.o electrotest testpower
