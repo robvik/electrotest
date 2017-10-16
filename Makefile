@@ -6,13 +6,16 @@ MYLIB = ./lib/
 
 all: lib electrotest
 
-lib: libcomponent libpower libresistance
+lib: libDir libcomponent libpower libresistance
 
 electrotest:
 	ar rcs $(MYLIB)libcomponent.a libcomponent.o
 	ar rcs $(MYLIB)libpower.a libpower.o
 	ar rcs $(MYLIB)libresistance.a libresistance.o
 	$(CC) -static src/main.c -o electrotest -L$(MYLIB) -lcomponent -lpower -lresistance
+	
+libDir:
+	mkdir -p lib/
 
 libcomponent:	src/libcomponent.c src/libcomponent.h
 	$(CC) -c -fPIC src/libcomponent.c
