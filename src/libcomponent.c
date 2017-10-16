@@ -25,6 +25,9 @@ int e_resistance(float orig_resistance, float *res_array)
     int count=0;//Return variablen
     int i=0;//En counter vairiabel som används internt
     int i_old = 0;
+
+    //Sätter alla värden i res_array till noll
+    for(i=2;i>=0; res_array[i--]=0);
     do{
         i_old = i;
         //Går uppifrån i e-12 arrayen och hittar 
