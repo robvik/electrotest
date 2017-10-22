@@ -37,7 +37,7 @@ testresistance:	src/test_libresistance.c libresistance
 	ar rcs libresistance.a libresistance.o
 	$(CC) -static src/test_libresistance.c -o testresistance -L$(MYLIB) -lresistance
 
-testcomponent:	src/test_libComponent.c libcomponent
+testcomponent:	src/test_libcomponent.c libcomponent
 	ar rcs libcomponent.a libcomponent.o
 	$(CC) -static src/test_libcomponent.c -o testcomponent -L$(MYLIB) -lcomponent
 	
